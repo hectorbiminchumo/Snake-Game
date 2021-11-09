@@ -55,7 +55,7 @@ class Character {
 
 //Instancias
     const cuadrito= new Character(40,350);
- 
+    const cuadrito2= new Character(30,350);
 
 
 //Crear las funciones del flujo del juego
@@ -71,6 +71,7 @@ function update(){
     
     clearCanvas();
     cuadrito.draw();
+    cuadrito2.draw();
    
     checkKeys();
 
@@ -82,10 +83,10 @@ function clearCanvas(){
 }
 
 function checkKeys(){
-    if(keys.ArrowLeft) cuadrito.moveLeft()
-    if(keys.ArrowRight) cuadrito.moveRight()
-    if(keys.ArrowUp) cuadrito.moveUp()
-    if(keys.ArrowDown) cuadrito.moveDown()
+    if(keys.ArrowLeft) cuadrito.moveLeft(), cuadrito2.moveLeft();
+    if(keys.ArrowRight) cuadrito.moveRight(), cuadrito2.moveRight();
+    if(keys.ArrowUp) cuadrito.moveUp(), cuadrito2.moveUp();
+    if(keys.ArrowDown) cuadrito.moveDown(), cuadrito2.moveDown();
 
 }
 
@@ -96,6 +97,7 @@ document.onkeydown = (event) => {
 document.onkeyup = (event) => {
     keys[event.key] = false;
     cuadrito.stop();
+    cuadrito2.stop();
     
 }
 
